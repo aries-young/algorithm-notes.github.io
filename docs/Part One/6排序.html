@@ -33,11 +33,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -72,6 +72,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
+    
+    <link rel="next" href="6随机选择.md" />
     
     
     <link rel="prev" href="5差分数组.html" />
@@ -215,19 +217,32 @@
             
         </li>
     
+        <li class="chapter " data-level="2.1.7" data-path="6随机选择.md">
+            
+                <span>
+            
+                    
+                    7 随机选择
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
         </li>
     
-        <li class="chapter " data-level="2.2" >
+        <li class="chapter " data-level="2.2" data-path="../Part Two/动态规划.html">
             
-                <span>
+                <a href="../Part Two/动态规划.html">
             
                     
                     Part Two. 动态规划专栏
             
-                </span>
+                </a>
             
 
             
@@ -251,16 +266,81 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../Part Three/1数组.html">
+            
+                <a href="../Part Three/1数组.html">
+            
+                    
+                    1 数组
+            
+                </a>
+            
+
+            
         </li>
     
-        <li class="chapter " data-level="3.2" >
+        <li class="chapter " data-level="3.1.2" data-path="../Part Three/2链表.html">
             
-                <span>
+                <a href="../Part Three/2链表.html">
+            
+                    
+                    2 链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../Part Three/3树.html">
+            
+                <a href="../Part Three/3树.html">
+            
+                    
+                    3 树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../Part Three/4栈.html">
+            
+                <a href="../Part Three/4栈.html">
+            
+                    
+                    4 栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../Part Four/高级数据结构.html">
+            
+                <a href="../Part Four/高级数据结构.html">
             
                     
                     Part Four. 高级数据结构
             
-                </span>
+                </a>
             
 
             
@@ -273,14 +353,14 @@
         
         
     
-        <li class="chapter " data-level="4.1" >
+        <li class="chapter " data-level="5.1" data-path="../Part Five/高级算法.html">
             
-                <span>
+                <a href="../Part Five/高级算法.html">
             
                     
                     Part Five. 高级算法
             
-                </span>
+                </a>
             
 
             
@@ -293,14 +373,27 @@
         
         
     
-        <li class="chapter " data-level="5.1" data-path="../牛客刷题笔记.html">
+        <li class="chapter " data-level="6.1" data-path="../Part Six/牛客刷题笔记.html">
             
-                <a href="../牛客刷题笔记.html">
+                <a href="../Part Six/牛客刷题笔记.html">
             
                     
                     Part Six. 牛客刷题笔记
             
                 </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" >
+            
+                <span>
+            
+                    
+                    [Part Seven. LeetCode 算题笔记]
+            
+                </span>
             
 
             
@@ -611,64 +704,6 @@ N + (N - 1) + (N - 2) + ... + 1 = \mathcal O(N^2)
     }
 };
 </code></pre>
-<h1 id="7-&#x968F;&#x673A;&#x9009;&#x62E9;">7 &#x968F;&#x673A;&#x9009;&#x62E9;</h1>
-<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> Solution {
-<span class="hljs-keyword">private</span>:
-    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; preSum;
-<span class="hljs-keyword">public</span>:
-    Solution(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; w) {
-        <span class="hljs-keyword">int</span> n = w.size();
-        preSum.resize(n + <span class="hljs-number">1</span>);
-        preSum[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++){
-            preSum[i] = preSum[i - <span class="hljs-number">1</span>] + w[i - <span class="hljs-number">1</span>];
-        }
-    }
-
-    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">pickIndex</span><span class="hljs-params">()</span> </span>{
-        <span class="hljs-keyword">int</span> n = preSum.size();
-        <span class="hljs-keyword">int</span> target = <span class="hljs-number">1</span> + rand() % (preSum[n - <span class="hljs-number">1</span>]); <span class="hljs-comment">// rand() % n  [0, n)</span>
-        <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>, right = n;
-        <span class="hljs-keyword">while</span> (left &lt; right) {
-            <span class="hljs-keyword">int</span> mid = left + (right - left) / <span class="hljs-number">2</span>;
-            <span class="hljs-keyword">if</span> (preSum[mid] &lt; target){
-                left = mid + <span class="hljs-number">1</span>;
-            } <span class="hljs-keyword">else</span> {
-                right = mid;
-            }
-        }
-        <span class="hljs-keyword">return</span> left - <span class="hljs-number">1</span>;
-    }
-};
-
-<span class="hljs-comment">/**
- * Your Solution object will be instantiated and called as such:
- * Solution* obj = new Solution(w);
- * int param_1 = obj-&gt;pickIndex();
- */</span>
-</code></pre>
-<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> Solution {
-<span class="hljs-keyword">private</span>:
-    mt19937 gen;
-    uniform_int_distribution&lt;<span class="hljs-keyword">int</span>&gt; dis;
-    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; preSum;
-<span class="hljs-keyword">public</span>:
-    Solution(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; w) : gen(random_device{}()), dis(<span class="hljs-number">1</span>, accumulate(w.begin(), w.end(), <span class="hljs-number">0</span>)) {
-        partial_sum(w.begin(), w.end(), back_inserter(preSum));
-    }
-
-    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">pickIndex</span><span class="hljs-params">()</span> </span>{
-        <span class="hljs-keyword">int</span> x = dis(gen);
-        <span class="hljs-keyword">return</span> lower_bound(preSum.begin(), preSum.end(), x) - preSum.begin();
-    }
-};
-
-<span class="hljs-comment">/**
- * Your Solution object will be instantiated and called as such:
- * Solution* obj = new Solution(w);
- * int param_1 = obj-&gt;pickIndex();
- */</span>
-</code></pre>
 
                                 
                                 </section>
@@ -696,10 +731,14 @@ N + (N - 1) + (N - 2) + ... + 1 = \mathcal O(N^2)
 
             
                 
-                <a href="5差分数组.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 5 差分数组">
+                <a href="5差分数组.html" class="navigation navigation-prev " aria-label="Previous page: 5 差分数组">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="6随机选择.md" class="navigation navigation-next " aria-label="Next page: 7 随机选择">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -708,7 +747,7 @@ N + (N - 1) + (N - 2) + ... + 1 = \mathcal O(N^2)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"6 排序","level":"2.1.6","depth":2,"next":{"title":"Part Two. 动态规划专栏","level":"2.2","depth":1,"ref":"","articles":[]},"previous":{"title":"5 差分数组","level":"2.1.5","depth":2,"path":"Part One/5差分数组.md","ref":"Part One/5差分数组.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","expandable-chapters","copy-code-button","flexible-alerts","katex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"目录","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"CORE CONTENT"},"note":{"className":"info","icon":"fa fa-info-circle","label":"NOTE"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"TIPS"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"SUPPLEMENT"}},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"langaue":"zh-hans","theme":"default","author":"aries-yhf","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"算法笔记","gitbook":"*","description":"算法"},"file":{"path":"Part One/6排序.md","mtime":"2022-09-10T02:30:32.721Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-10T10:21:30.119Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"6 排序","level":"2.1.6","depth":2,"next":{"title":"7 随机选择","level":"2.1.7","depth":2,"path":"Part One/6随机选择.md","ref":"Part One/6随机选择.md","articles":[]},"previous":{"title":"5 差分数组","level":"2.1.5","depth":2,"path":"Part One/5差分数组.md","ref":"Part One/5差分数组.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","expandable-chapters","copy-code-button","flexible-alerts","katex","-lunr","-search","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"目录","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search-pro":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"CORE CONTENT"},"note":{"className":"info","icon":"fa fa-info-circle","label":"NOTE"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"TIPS"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"SUPPLEMENT"}},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"langaue":"zh-hans","theme":"default","author":"aries-yhf","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"算法笔记","gitbook":"*","description":"算法"},"file":{"path":"Part One/6排序.md","mtime":"2022-09-10T10:38:38.383Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-10T10:50:47.235Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -742,19 +781,11 @@ N + (N - 1) + (N - 2) + ... + 1 = \mathcal O(N^2)
         
     
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
         
     
         
