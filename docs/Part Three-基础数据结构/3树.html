@@ -135,7 +135,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.1.1" data-path="../PartOne-常用方法-常用方法/1指针.md">
+        <li class="chapter " data-level="2.1.1" data-path="../PartOne-常用方法/1指针.md">
             
                 <span>
             
@@ -771,7 +771,8 @@ root.right = build(inorder, index + <span class="hljs-number">1</span>, inEnd,
         <span class="hljs-keyword">int</span> sz = q.size();
         <span class="hljs-comment">// &#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#x904D;&#x5386;&#x6BCF;&#x4E00;&#x5C42;&#x7684;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;</span>
         <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; sz; i++) {
-            TreeNode* cur = q.pop();
+            TreeNode* cur = q.front();
+            q.pop();
             <span class="hljs-comment">// &#x5C06;&#x4E0B;&#x4E00;&#x5C42;&#x8282;&#x70B9;&#x653E;&#x5165;&#x961F;&#x5217;</span>
             <span class="hljs-keyword">if</span> (cur-&gt;left != <span class="hljs-literal">nullptr</span>) {
                 q.push(cur-&gt;left);
@@ -782,6 +783,39 @@ root.right = build(inorder, index + <span class="hljs-number">1</span>, inEnd,
         }
     }
 }
+</code></pre>
+<h5 id="103-&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x952F;&#x9F7F;&#x5F62;&#x5C42;&#x5E8F;&#x904D;&#x5386;">103. &#x4E8C;&#x53C9;&#x6811;&#x7684;&#x952F;&#x9F7F;&#x5F62;&#x5C42;&#x5E8F;&#x904D;&#x5386;</h5>
+<p><strong>&#x9898;&#x76EE;&#x63CF;&#x8FF0;</strong></p>
+<p><a href="https://leetcode.cn/problems/binary-tree-zigzag-level-order-traversal/description/" target="_blank">103. &#x4E8C;&#x53C9;&#x6811;&#x7684;&#x952F;&#x9F7F;&#x5F62;&#x5C42;&#x5E8F;&#x904D;&#x5386;</a></p>
+<p><strong>&#x89E3;&#x6CD5;</strong></p>
+<p>&#x6709;&#x4E24;&#x79CD;&#x89E3;&#x6CD5;&#xFF0C;&#x4E00;&#x79CD;&#x662F;&#x76F4;&#x63A5;&#x5C06;&#x4E00;&#x5C42;&#x7684;&#x7ED3;&#x679C; reverse&#xFF1B;&#x4E00;&#x79CD;&#x662F;&#x91C7;&#x7528; deque&#xFF0C;&#x90FD;&#x662F;&#x961F;&#x9996;&#x51FA;&#x961F;&#xFF0C;&#x4F46;&#x4E00;&#x6B21;&#x662F;&#x961F;&#x5C3E;&#x63D2;&#x5165;&#xFF0C;&#x4E00;&#x6B21;&#x662F;&#x961F;&#x9996;&#x63D2;&#x5165;&#x3002;&#x90FD;&#x6CA1;&#x5565;&#x6280;&#x672F;&#x542B;&#x91CF;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> Solution {
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; zigzagLevelOrder(TreeNode* root) {
+        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">nullptr</span>) <span class="hljs-keyword">return</span> {};
+        <span class="hljs-built_in">queue</span>&lt;TreeNode*&gt; q;
+        q.push(root);
+
+        <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; ans;
+        <span class="hljs-keyword">int</span> flag = <span class="hljs-number">0</span>;
+
+        <span class="hljs-keyword">while</span> (!q.empty()) {
+             <span class="hljs-keyword">int</span> sz = q.size(); 
+             <span class="hljs-built_in">vector</span> &lt;<span class="hljs-keyword">int</span>&gt; oneLevel;
+             <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; sz; i++) {
+                TreeNode* cur = q.front();
+                q.pop();
+                oneLevel.push_back(cur-&gt;val);
+                <span class="hljs-keyword">if</span> (cur-&gt;left != <span class="hljs-literal">nullptr</span>) q.push(cur-&gt;left);
+                <span class="hljs-keyword">if</span> (cur-&gt;right != <span class="hljs-literal">nullptr</span>) q.push(cur-&gt;right);
+            }
+            <span class="hljs-keyword">if</span> (oneLevel.size() &gt; <span class="hljs-number">1</span> &amp;&amp; flag) reverse(oneLevel.begin(), oneLevel.end());
+            ans.push_back(oneLevel);
+            flag = ~flag;
+        }
+        <span class="hljs-keyword">return</span> ans;
+    }
+};
 </code></pre>
 <h2 id="&#x4E8C;&#x53C9;&#x6811;&#x5E8F;&#x5217;&#x5316;">&#x4E8C;&#x53C9;&#x6811;&#x5E8F;&#x5217;&#x5316;</h2>
 <p>&#x4E8C;&#x53C9;&#x6811;&#x5E8F;&#x5217;&#x5316;&#x6700;&#x57FA;&#x7840;&#x7684;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x5C31;&#x662F; LeetCode 297&#xFF0C;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x8981;&#x552F;&#x4E00;&#x786E;&#x5B9A;&#x4E00;&#x68F5;&#x4E8C;&#x53C9;&#x6811;&#xFF0C;&#x8981;&#x4E48;&#x662F;&#x524D;&#x5E8F; + &#x4E2D;&#x5E8F;&#xFF0C;&#x8981;&#x4E48;&#x662F;&#x4E2D;&#x5E8F; + &#x540E;&#x5E8F;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5728;&#x8FD9;&#x9053;&#x9898;&#x4E2D;&#x524D;&#x5E8F;&#x904D;&#x5386;&#x7684;&#x7ED3;&#x679C;&#x8BB0;&#x5F55;&#x4E86;&#x7A7A;&#x6307;&#x9488;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x53EF;&#x4EE5;&#x5E8F;&#x5217;&#x5316;&#x7ED3;&#x679C;&#x552F;&#x4E00;&#x786E;&#x5B9A;&#x4E00;&#x68F5;&#x4E8C;&#x53C9;&#x6811;</p>
@@ -1353,7 +1387,7 @@ public:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3 树","level":"3.1.3","depth":2,"next":{"title":"4 栈","level":"3.1.4","depth":2,"path":"Part Three-基础数据结构/4栈.md","ref":"Part Three-基础数据结构/4栈.md","articles":[]},"previous":{"title":"2 链表","level":"3.1.2","depth":2,"path":"Part Three-基础数据结构/2链表.md","ref":"Part Three-基础数据结构/2链表.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","expandable-chapters","copy-code-button","flexible-alerts","mathjax-pro","-lunr","-search","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"目录","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"CORE CONTENT"},"note":{"className":"info","icon":"fa fa-info-circle","label":"NOTE"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"TIPS"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"SUPPLEMENT"}},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"langaue":"zh-hans","theme":"default","author":"aries-yhf","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"算法笔记","gitbook":"*","description":"算法"},"file":{"path":"Part Three-基础数据结构/3树.md","mtime":"2023-02-15T11:02:36.687Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-03-13T13:41:33.571Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3 树","level":"3.1.3","depth":2,"next":{"title":"4 栈","level":"3.1.4","depth":2,"path":"Part Three-基础数据结构/4栈.md","ref":"Part Three-基础数据结构/4栈.md","articles":[]},"previous":{"title":"2 链表","level":"3.1.2","depth":2,"path":"Part Three-基础数据结构/2链表.md","ref":"Part Three-基础数据结构/2链表.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","expandable-chapters","copy-code-button","flexible-alerts","mathjax-pro","-lunr","-search","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"目录","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"CORE CONTENT"},"note":{"className":"info","icon":"fa fa-info-circle","label":"NOTE"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"TIPS"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"SUPPLEMENT"}},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"langaue":"zh-hans","theme":"default","author":"aries-yhf","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"算法笔记","gitbook":"*","description":"算法"},"file":{"path":"Part Three-基础数据结构/3树.md","mtime":"2023-03-16T18:31:53.890Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-03-18T05:22:35.429Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

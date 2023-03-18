@@ -131,7 +131,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.1.1" data-path="../PartOne-常用方法-常用方法/1指针.md">
+        <li class="chapter " data-level="2.1.1" data-path="../PartOne-常用方法/1指针.md">
             
                 <span>
             
@@ -523,6 +523,51 @@ print(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <s
 <span class="hljs-keyword">auto</span> end = chrono::high_resolution_clock::now();
 <span class="hljs-keyword">auto</span> cost_time = chrono::duration_cast&lt;chrono::nanoseconds&gt;(end - start).count();
 </code></pre>
+<h2 id="&#x5B57;&#x7B26;&#x4E32;&#x64CD;&#x4F5C;">&#x5B57;&#x7B26;&#x4E32;&#x64CD;&#x4F5C;</h2>
+<p>&#x53D6;&#x5B50;&#x4E32;</p>
+<pre><code class="lang-cpp">s.substr(pos, n)     <span class="hljs-comment">// &#x622A;&#x53D6;s&#x4E2D;&#x4ECE;pos&#x5F00;&#x59CB;&#xFF08;&#x5305;&#x62EC;0&#xFF09;&#x7684;n&#x4E2A;&#x5B57;&#x7B26;&#x7684;&#x5B50;&#x4E32;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;</span>
+s.substr(pos)        <span class="hljs-comment">// &#x622A;&#x53D6;s&#x4E2D;&#x4ECE;&#x4ECE;pos&#x5F00;&#x59CB;&#xFF08;&#x5305;&#x62EC;0&#xFF09;&#x5230;&#x672B;&#x5C3E;&#x7684;&#x6240;&#x6709;&#x5B57;&#x7B26;&#x7684;&#x5B50;&#x4E32;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;</span>
+</code></pre>
+<p>&#x67E5;&#x627E;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">if</span> (pos != str.npos) <span class="hljs-comment">// &#x67E5;&#x627E;</span>
+<span class="hljs-keyword">int</span> pos = str.find(<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-number">1</span>);  <span class="hljs-comment">// &#x4ECE; str[1] &#x5F00;&#x59CB;&#x67E5;&#x627E;</span>
+</code></pre>
+<p>&#x6570;&#x8F6C;&#x6362;&#x4E3A;&#x5BF9;&#x5E94;&#x8FDB;&#x5236;&#x5B57;&#x7B26;&#x4E32;</p>
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">Hex2Str</span> <span class="hljs-params">(<span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> k)</span> </span>{
+    <span class="hljs-built_in">string</span> res = <span class="hljs-string">&quot;&quot;</span>;
+    <span class="hljs-keyword">while</span> (n &gt; <span class="hljs-number">0</span>) { 
+        <span class="hljs-keyword">if</span> (n % k &gt;= <span class="hljs-number">10</span>) res += (n % k + <span class="hljs-string">&apos;A&apos;</span> - <span class="hljs-number">10</span>);
+        <span class="hljs-keyword">else</span> res += (n % k + <span class="hljs-string">&apos;0&apos;</span>);
+        n /= k;
+    }
+    reverse(res.begin(), res.end());
+    <span class="hljs-keyword">return</span> res;
+}
+</code></pre>
+<h2 id="queue-&#x64CD;&#x4F5C;">queue &#x64CD;&#x4F5C;</h2>
+<pre><code class="lang-cpp"><span class="hljs-comment">// &#x5165;&#x961F;</span>
+q.push(x);
+
+<span class="hljs-comment">// &#x51FA;&#x961F;</span>
+<span class="hljs-keyword">auto</span> x = q.front();
+q.pop();
+</code></pre>
+<h2 id="&#x7B97;&#x6CD5;">&#x7B97;&#x6CD5;</h2>
+<h3 id="&#x4E8C;&#x5206;&#x6CD5;">&#x4E8C;&#x5206;&#x6CD5;</h3>
+<pre><code class="lang-cpp">upper_bound() &#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x5728;&lt;algorithm&gt;&#x5934;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x7528;&#x4E8E;&#x5728;&#x6307;&#x5B9A;&#x8303;&#x56F4;&#x5185;&#x67E5;&#x627E;&#x5927;&#x4E8E;&#x76EE;&#x6807;&#x503C;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x3002;&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x8BED;&#x6CD5;&#x683C;&#x5F0F;&#x6709; <span class="hljs-number">2</span> &#x79CD;&#xFF0C;&#x5206;&#x522B;&#x662F;&#xFF1A;
+<span class="hljs-comment">//&#x67E5;&#x627E;[first, last)&#x533A;&#x57DF;&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x5927;&#x4E8E; val &#x7684;&#x5143;&#x7D20;&#x3002;</span>
+<span class="hljs-function">ForwardIterator <span class="hljs-title">upper_bound</span> <span class="hljs-params">(ForwardIterator first, ForwardIterator last,
+                             <span class="hljs-keyword">const</span> T&amp; val)</span></span>;
+<span class="hljs-comment">//&#x67E5;&#x627E;[first, last)&#x533A;&#x57DF;&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x4E0D;&#x7B26;&#x5408; comp &#x89C4;&#x5219;&#x7684;&#x5143;&#x7D20;</span>
+<span class="hljs-function">ForwardIterator <span class="hljs-title">upper_bound</span> <span class="hljs-params">(ForwardIterator first, ForwardIterator last,
+                             <span class="hljs-keyword">const</span> T&amp; val, Compare comp)</span></span>;
+</code></pre>
+<p><code>upper_bound()</code> &#x5E95;&#x5C42;&#x5B9E;&#x73B0;&#x91C7;&#x7528;&#x7684;&#x662F;&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x56E0;&#x6B64;&#x8BE5;&#x51FD;&#x6570;&#x4EC5;&#x9002;&#x7528;&#x4E8E;&#x201C;&#x5DF2;&#x6392;&#x597D;&#x5E8F;&#x201D;&#x7684;&#x5E8F;&#x5217;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x91CC;&#x6240;&#x8BF4;&#x7684;&#x201C;&#x5DF2;&#x6392;&#x597D;&#x5E8F;&#x201D;&#xFF0C;&#x5E76;&#x4E0D;&#x8981;&#x6C42;&#x6570;&#x636E;&#x5B8C;&#x5168;&#x6309;&#x7167;&#x67D0;&#x4E2A;&#x6392;&#x5E8F;&#x89C4;&#x5219;&#x8FDB;&#x884C;&#x5347;&#x5E8F;&#x6216;&#x964D;&#x5E8F;&#x6392;&#x5E8F;&#xFF0C;&#x800C;&#x4EC5;&#x4EC5;&#x8981;&#x6C42; [first, last) &#x533A;&#x57DF;&#x5185;&#x6240;&#x6709;&#x4EE4; element &lt; val &#x6216;&#x8005; comp(val, element&#xFF09;&#x6210;&#x7ACB;&#x7684;&#x5143;&#x7D20;&#x90FD;&#x4F4D;&#x4E8E;&#x4E0D;&#x6210;&#x7ACB;&#x5143;&#x7D20;&#x7684;&#x524D;&#x9762;&#xFF08;&#x5176;&#x4E2D; element &#x4E3A;&#x6307;&#x5B9A;&#x8303;&#x56F4;&#x5185;&#x7684;&#x5143;&#x7D20;&#xFF09;</p>
+<h3 id="&#x524D;&#x7F00;&#x548C;">&#x524D;&#x7F00;&#x548C;</h3>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/gibkIz0MVqdGFL8VaGGr0vzRcmibenAMtMGcMLfUt26I5y8ibbgA6YiawXP2UGU3ke758gO1GqogeOV9FiarJThypBA/640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="&#x56FE;&#x7247;" style="zoom:50%;"></p>
+<pre><code class="lang-cpp">preSum.push_back(<span class="hljs-number">0</span>);
+partial_sum(w.begin(), w.end(), back_inserter(preSum));
+</code></pre>
 
                                 
                                 </section>
@@ -558,7 +603,7 @@ print(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <s
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"C++","level":"8.1.1","depth":2,"previous":{"title":"[Part Nine-语言模板]","level":"8.1","depth":1,"ref":"","articles":[{"title":"C++","level":"8.1.1","depth":2,"path":"Part Nine-语言模板/C++常用方法.md","ref":"Part Nine-语言模板/C++常用方法.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["intopic-toc","expandable-chapters","copy-code-button","flexible-alerts","mathjax-pro","-lunr","-search","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"目录","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"CORE CONTENT"},"note":{"className":"info","icon":"fa fa-info-circle","label":"NOTE"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"TIPS"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"SUPPLEMENT"}},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"langaue":"zh-hans","theme":"default","author":"aries-yhf","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"算法笔记","gitbook":"*","description":"算法"},"file":{"path":"Part Nine-语言模板/C++常用方法.md","mtime":"2023-03-10T10:25:24.413Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-03-13T13:41:33.571Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"C++","level":"8.1.1","depth":2,"previous":{"title":"[Part Nine-语言模板]","level":"8.1","depth":1,"ref":"","articles":[{"title":"C++","level":"8.1.1","depth":2,"path":"Part Nine-语言模板/C++常用方法.md","ref":"Part Nine-语言模板/C++常用方法.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["intopic-toc","expandable-chapters","copy-code-button","flexible-alerts","mathjax-pro","-lunr","-search","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"目录","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"CORE CONTENT"},"note":{"className":"info","icon":"fa fa-info-circle","label":"NOTE"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"TIPS"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"SUPPLEMENT"}},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"langaue":"zh-hans","theme":"default","author":"aries-yhf","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"算法笔记","gitbook":"*","description":"算法"},"file":{"path":"Part Nine-语言模板/C++常用方法.md","mtime":"2023-03-16T18:07:28.286Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-03-18T05:22:35.429Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

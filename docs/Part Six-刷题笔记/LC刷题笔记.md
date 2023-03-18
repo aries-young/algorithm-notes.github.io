@@ -656,7 +656,7 @@ public:
 ```cpp
 class Solution {
 private:
-    
+    vector<vector<int>> dirs = { {-1, 0}, {1, 0}, {0, -1}, {0, 1} };
 public:
     int minimumTime(vector<vector<int>>& grid) {
         int n = grid.size(), m = grid[0].size();
@@ -969,6 +969,81 @@ public:
             maxR = max(maxR, ranges[i][1]);
         }
         return ans;
+    }
+};
+```
+
+## 459. 重复的子字符串
+
+**题目描述**
+
+[459. 重复的子字符串](https://leetcode.cn/problems/repeated-substring-pattern/description/)
+
+**解法**
+
+这道题很巧妙，你想如果一个子串重复 $k$ 次可以构成串 $s$，那么这个字符串 $s$ 是不是有点像循环数组，记 $s=s's's'...s'$，那么移除字符串串 $s$ 前面的若干个 $s'$ 再添加到剩余字符串的尾部刚好又能得到一个完整的 $s$
+
+这时候方法就来了，一个字符串 $s$ 至少由子串重复两次构成，即 $s=s's'$，那么 $2 *s = s's's's'$，移除第一个和最后一个字符，那么至少在剩下的串中应该还能凑出一个 $s$
+
+反过来，如果字符串 $s$ 不能由子串重复构成，那么 $2*s = ss$，此时移除第一个和最后一个字符，那么剩下的串中就凑不出一个完整的 $s$
+
+```cpp
+class Solution {
+public:
+    bool repeatedSubstringPattern(string s) {
+        return (s + s).find(s, 1) != s.size();
+    }   
+};
+```
+
+# 二叉树
+
+## 
+
+**题目描述**
+
+[99. 恢复二叉搜索树](https://leetcode.cn/problems/recover-binary-search-tree/description/)
+
+**解法**
+
+中序遍历得到结果，然后在数组中查找可能出现错误的结点
+
+![1.jpg](https://pic.leetcode-cn.com/ceaf09da74f78f235f329dbc588f63da7464590947edb8c0415a4bd9ff493299-1.jpg)
+
+```cpp
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+private:
+    TreeNode* pre = nullptr;
+    TreeNode* x  = nullptr;
+    TreeNode* y = nullptr;
+public:
+    void recoverTree(TreeNode* root) {
+        inOrderTraverse(root);
+        if (x != nullptr && y != nullptr) {
+            swap(x->val, y->val);
+        }
+    }
+
+    void inOrderTraverse(TreeNode * root) {
+        if (root == nullptr) return;
+        inOrderTraverse(root->left);
+        if (pre != nullptr && pre->val > root->val) {
+            y = root;
+            if (x ==  nullptr) x = pre;
+        }
+        pre = root;
+        inOrderTraverse(root->right);
     }
 };
 ```

@@ -135,7 +135,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.1.1" data-path="../PartOne-常用方法-常用方法/1指针.md">
+        <li class="chapter " data-level="2.1.1" data-path="../PartOne-常用方法/1指针.md">
             
                 <span>
             
@@ -1020,7 +1020,7 @@ lcp[i][j]=lcp[i+1][j+1]+1\ 若\ s[i]==s[j]\ 否则\ lcp[i][j]=0\
 <p>&#x7B97;&#x4E0A;&#x4E0A;&#x9762;&#x4E24;&#x4E2A;&#x7EA6;&#x675F;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x51FA;&#x6B63;&#x786E;&#x7ED3;&#x679C;&#x4E86;</p>
 <pre><code class="lang-cpp"><span class="hljs-keyword">class</span> Solution {
 <span class="hljs-keyword">private</span>:
-
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; dirs = { {<span class="hljs-number">-1</span>, <span class="hljs-number">0</span>}, {<span class="hljs-number">1</span>, <span class="hljs-number">0</span>}, {<span class="hljs-number">0</span>, <span class="hljs-number">-1</span>}, {<span class="hljs-number">0</span>, <span class="hljs-number">1</span>} };
 <span class="hljs-keyword">public</span>:
     <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">minimumTime</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt;&amp; grid)</span> </span>{
         <span class="hljs-keyword">int</span> n = grid.size(), m = grid[<span class="hljs-number">0</span>].size();
@@ -1295,6 +1295,63 @@ lcp[i][j]=lcp[i+1][j+1]+1\ 若\ s[i]==s[j]\ 否则\ lcp[i][j]=0\
     }
 };
 </code></pre>
+<h2 id="459-&#x91CD;&#x590D;&#x7684;&#x5B50;&#x5B57;&#x7B26;&#x4E32;">459. &#x91CD;&#x590D;&#x7684;&#x5B50;&#x5B57;&#x7B26;&#x4E32;</h2>
+<p><strong>&#x9898;&#x76EE;&#x63CF;&#x8FF0;</strong></p>
+<p><a href="https://leetcode.cn/problems/repeated-substring-pattern/description/" target="_blank">459. &#x91CD;&#x590D;&#x7684;&#x5B50;&#x5B57;&#x7B26;&#x4E32;</a></p>
+<p><strong>&#x89E3;&#x6CD5;</strong></p>
+<p>&#x8FD9;&#x9053;&#x9898;&#x5F88;&#x5DE7;&#x5999;&#xFF0C;&#x4F60;&#x60F3;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x5B50;&#x4E32;&#x91CD;&#x590D; $k$ &#x6B21;&#x53EF;&#x4EE5;&#x6784;&#x6210;&#x4E32; $s$&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x5B57;&#x7B26;&#x4E32; $s$ &#x662F;&#x4E0D;&#x662F;&#x6709;&#x70B9;&#x50CF;&#x5FAA;&#x73AF;&#x6570;&#x7EC4;&#xFF0C;&#x8BB0; $s=s&apos;s&apos;s&apos;...s&apos;$&#xFF0C;&#x90A3;&#x4E48;&#x79FB;&#x9664;&#x5B57;&#x7B26;&#x4E32;&#x4E32; $s$ &#x524D;&#x9762;&#x7684;&#x82E5;&#x5E72;&#x4E2A; $s&apos;$ &#x518D;&#x6DFB;&#x52A0;&#x5230;&#x5269;&#x4F59;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5C3E;&#x90E8;&#x521A;&#x597D;&#x53C8;&#x80FD;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684; $s$</p>
+<p>&#x8FD9;&#x65F6;&#x5019;&#x65B9;&#x6CD5;&#x5C31;&#x6765;&#x4E86;&#xFF0C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32; $s$ &#x81F3;&#x5C11;&#x7531;&#x5B50;&#x4E32;&#x91CD;&#x590D;&#x4E24;&#x6B21;&#x6784;&#x6210;&#xFF0C;&#x5373; $s=s&apos;s&apos;$&#xFF0C;&#x90A3;&#x4E48; $2 *s = s&apos;s&apos;s&apos;s&apos;$&#xFF0C;&#x79FB;&#x9664;&#x7B2C;&#x4E00;&#x4E2A;&#x548C;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x90A3;&#x4E48;&#x81F3;&#x5C11;&#x5728;&#x5269;&#x4E0B;&#x7684;&#x4E32;&#x4E2D;&#x5E94;&#x8BE5;&#x8FD8;&#x80FD;&#x51D1;&#x51FA;&#x4E00;&#x4E2A; $s$</p>
+<p>&#x53CD;&#x8FC7;&#x6765;&#xFF0C;&#x5982;&#x679C;&#x5B57;&#x7B26;&#x4E32; $s$ &#x4E0D;&#x80FD;&#x7531;&#x5B50;&#x4E32;&#x91CD;&#x590D;&#x6784;&#x6210;&#xFF0C;&#x90A3;&#x4E48; $2*s = ss$&#xFF0C;&#x6B64;&#x65F6;&#x79FB;&#x9664;&#x7B2C;&#x4E00;&#x4E2A;&#x548C;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x90A3;&#x4E48;&#x5269;&#x4E0B;&#x7684;&#x4E32;&#x4E2D;&#x5C31;&#x51D1;&#x4E0D;&#x51FA;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684; $s$</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> Solution {
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">repeatedSubstringPattern</span><span class="hljs-params">(<span class="hljs-built_in">string</span> s)</span> </span>{
+        <span class="hljs-keyword">return</span> (s + s).find(s, <span class="hljs-number">1</span>) != s.size();
+    }   
+};
+</code></pre>
+<h1 id="&#x4E8C;&#x53C9;&#x6811;">&#x4E8C;&#x53C9;&#x6811;</h1>
+<h2 id=""> </h2>
+<p><strong>&#x9898;&#x76EE;&#x63CF;&#x8FF0;</strong></p>
+<p><a href="https://leetcode.cn/problems/recover-binary-search-tree/description/" target="_blank">99. &#x6062;&#x590D;&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;</a></p>
+<p><strong>&#x89E3;&#x6CD5;</strong></p>
+<p>&#x4E2D;&#x5E8F;&#x904D;&#x5386;&#x5F97;&#x5230;&#x7ED3;&#x679C;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x6570;&#x7EC4;&#x4E2D;&#x67E5;&#x627E;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x9519;&#x8BEF;&#x7684;&#x7ED3;&#x70B9;</p>
+<p><img src="https://pic.leetcode-cn.com/ceaf09da74f78f235f329dbc588f63da7464590947edb8c0415a4bd9ff493299-1.jpg" alt="1.jpg"></p>
+<pre><code class="lang-cpp"><span class="hljs-comment">/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */</span>
+<span class="hljs-keyword">class</span> Solution {
+<span class="hljs-keyword">private</span>:
+    TreeNode* pre = <span class="hljs-literal">nullptr</span>;
+    TreeNode* x  = <span class="hljs-literal">nullptr</span>;
+    TreeNode* y = <span class="hljs-literal">nullptr</span>;
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">recoverTree</span><span class="hljs-params">(TreeNode* root)</span> </span>{
+        inOrderTraverse(root);
+        <span class="hljs-keyword">if</span> (x != <span class="hljs-literal">nullptr</span> &amp;&amp; y != <span class="hljs-literal">nullptr</span>) {
+            swap(x-&gt;val, y-&gt;val);
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">inOrderTraverse</span><span class="hljs-params">(TreeNode * root)</span> </span>{
+        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">nullptr</span>) <span class="hljs-keyword">return</span>;
+        inOrderTraverse(root-&gt;left);
+        <span class="hljs-keyword">if</span> (pre != <span class="hljs-literal">nullptr</span> &amp;&amp; pre-&gt;val &gt; root-&gt;val) {
+            y = root;
+            <span class="hljs-keyword">if</span> (x ==  <span class="hljs-literal">nullptr</span>) x = pre;
+        }
+        pre = root;
+        inOrderTraverse(root-&gt;right);
+    }
+};
+</code></pre>
 
                                 
                                 </section>
@@ -1338,7 +1395,7 @@ lcp[i][j]=lcp[i+1][j+1]+1\ 若\ s[i]==s[j]\ 否则\ lcp[i][j]=0\
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"LeetCode 算题笔记","level":"6.1.2","depth":2,"next":{"title":"Part Eight-数学相关","level":"7.1","depth":1,"path":"Part Eight-数学相关/数学相关.md","ref":"Part Eight-数学相关/数学相关.md","articles":[]},"previous":{"title":"牛客刷题笔记","level":"6.1.1","depth":2,"path":"Part Six-刷题笔记/牛客刷题笔记.md","ref":"Part Six-刷题笔记/牛客刷题笔记.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","expandable-chapters","copy-code-button","flexible-alerts","mathjax-pro","-lunr","-search","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"目录","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"CORE CONTENT"},"note":{"className":"info","icon":"fa fa-info-circle","label":"NOTE"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"TIPS"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"SUPPLEMENT"}},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"langaue":"zh-hans","theme":"default","author":"aries-yhf","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"算法笔记","gitbook":"*","description":"算法"},"file":{"path":"Part Six-刷题笔记/LC刷题笔记.md","mtime":"2023-03-13T13:41:31.508Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-03-13T13:41:33.571Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"LeetCode 算题笔记","level":"6.1.2","depth":2,"next":{"title":"Part Eight-数学相关","level":"7.1","depth":1,"path":"Part Eight-数学相关/数学相关.md","ref":"Part Eight-数学相关/数学相关.md","articles":[]},"previous":{"title":"牛客刷题笔记","level":"6.1.1","depth":2,"path":"Part Six-刷题笔记/牛客刷题笔记.md","ref":"Part Six-刷题笔记/牛客刷题笔记.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","expandable-chapters","copy-code-button","flexible-alerts","mathjax-pro","-lunr","-search","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"目录","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"CORE CONTENT"},"note":{"className":"info","icon":"fa fa-info-circle","label":"NOTE"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"TIPS"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"SUPPLEMENT"}},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"langaue":"zh-hans","theme":"default","author":"aries-yhf","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"算法笔记","gitbook":"*","description":"算法"},"file":{"path":"Part Six-刷题笔记/LC刷题笔记.md","mtime":"2023-03-18T05:22:27.296Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-03-18T05:22:35.429Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
