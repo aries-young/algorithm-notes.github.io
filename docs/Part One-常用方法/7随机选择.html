@@ -1,0 +1,954 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>7 随机选择 · 算法笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="aries-yhf">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="8优先队列.html" />
+    
+    
+    <link rel="prev" href="6排序.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Part Zero. Introduction 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    PartOne-常用方法
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="1指针.html">
+            
+                <a href="1指针.html">
+            
+                    
+                    1 指针
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="2回溯.html">
+            
+                <a href="2回溯.html">
+            
+                    
+                    2 回溯
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="3搜索.html">
+            
+                <a href="3搜索.html">
+            
+                    
+                    3 搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="4前缀和.html">
+            
+                <a href="4前缀和.html">
+            
+                    
+                    4 前缀和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="5差分数组.html">
+            
+                <a href="5差分数组.html">
+            
+                    
+                    5 差分数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="6排序.html">
+            
+                <a href="6排序.html">
+            
+                    
+                    6 排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.7" data-path="7随机选择.html">
+            
+                <a href="7随机选择.html">
+            
+                    
+                    7 随机选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="8优先队列.html">
+            
+                <a href="8优先队列.html">
+            
+                    
+                    8 随机选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../Part Two-动态规划/动态规划.html">
+            
+                <a href="../Part Two-动态规划/动态规划.html">
+            
+                    
+                    Part Two-动态规划专栏
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    Part Three-基础数据结构
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../Part Three-基础数据结构/1数组.html">
+            
+                <a href="../Part Three-基础数据结构/1数组.html">
+            
+                    
+                    1 数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../Part Three-基础数据结构/2链表.html">
+            
+                <a href="../Part Three-基础数据结构/2链表.html">
+            
+                    
+                    2 链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../Part Three-基础数据结构/3树.html">
+            
+                <a href="../Part Three-基础数据结构/3树.html">
+            
+                    
+                    3 树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../Part Three-基础数据结构/4栈.html">
+            
+                <a href="../Part Three-基础数据结构/4栈.html">
+            
+                    
+                    4 栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../Part Four-高级数据结构/高级数据结构.html">
+            
+                <a href="../Part Four-高级数据结构/高级数据结构.html">
+            
+                    
+                    Part Four-高级数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../Part Five-高级算法/高级算法.html">
+            
+                <a href="../Part Five-高级算法/高级算法.html">
+            
+                    
+                    Part Five-高级算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <span>
+            
+                    
+                    [Part Six-刷题笔记]
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="../Part Six-刷题笔记/牛客刷题笔记.html">
+            
+                <a href="../Part Six-刷题笔记/牛客刷题笔记.html">
+            
+                    
+                    牛客刷题笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2" data-path="../Part Six-刷题笔记/LC刷题笔记.html">
+            
+                <a href="../Part Six-刷题笔记/LC刷题笔记.html">
+            
+                    
+                    LeetCode 算题笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../Part Eight-数学相关/数学相关.html">
+            
+                <a href="../Part Eight-数学相关/数学相关.html">
+            
+                    
+                    Part Eight-数学相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" >
+            
+                <span>
+            
+                    
+                    [Part Nine-语言模板]
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.1" data-path="../Part Nine-语言模板/C++常用方法.html">
+            
+                <a href="../Part Nine-语言模板/C++常用方法.html">
+            
+                    
+                    C++
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >7 随机选择</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="7-&#x968F;&#x673A;&#x9009;&#x62E9;">7 &#x968F;&#x673A;&#x9009;&#x62E9;</h1>
+<h5 id="&#x3010;&#x7ECF;&#x5178;&#x95EE;&#x9898;&#x3011;&#x6309;&#x6743;&#x91CD;&#x968F;&#x673A;&#x9009;&#x62E9;">&#x3010;&#x7ECF;&#x5178;&#x95EE;&#x9898;&#x3011;&#x6309;&#x6743;&#x91CD;&#x968F;&#x673A;&#x9009;&#x62E9;</h5>
+<p><strong>&#x9898;&#x76EE;&#x63CF;&#x8FF0;</strong></p>
+<p><a href="https://leetcode.cn/problems/random-pick-with-weight/" target="_blank">528. &#x6309;&#x6743;&#x91CD;&#x968F;&#x673A;&#x9009;&#x62E9;</a></p>
+<p><strong>&#x89E3;&#x6CD5;</strong></p>
+<p>&#x5047;&#x8BBE;&#x7ED9;&#x4F60;&#x8F93;&#x5165;&#x7684;&#x6743;&#x91CD;&#x6570;&#x7EC4;&#x662F;<code>w = [1,3,2,1]</code>&#xFF0C;&#x6211;&#x4EEC;&#x60F3;&#x8BA9;&#x6982;&#x7387;&#x7B26;&#x5408;&#x6743;&#x91CD;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x62BD;&#x8C61;&#x4E00;&#x4E0B;&#xFF0C;&#x6839;&#x636E;&#x6743;&#x91CD;&#x753B;&#x51FA;&#x8FD9;&#x4E48;&#x4E00;&#x6761;&#x5F69;&#x8272;&#x7684;&#x7EBF;&#x6BB5;&#xFF08;&#x5982;&#x4E0B;&#x56FE;&#xFF09;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5728;&#x7EBF;&#x6BB5;&#x4E0A;&#x9762;&#x968F;&#x673A;&#x4E22;&#x4E00;&#x4E2A;&#x77F3;&#x5B50;&#xFF0C;&#x77F3;&#x5B50;&#x843D;&#x5728;&#x54EA;&#x4E2A;&#x989C;&#x8272;&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x9009;&#x62E9;&#x8BE5;&#x989C;&#x8272;&#x5BF9;&#x5E94;&#x7684;&#x6743;&#x91CD;&#x7D22;&#x5F15;&#xFF0C;&#x90A3;&#x4E48;&#x6BCF;&#x4E2A;&#x7D22;&#x5F15;&#x88AB;&#x9009;&#x4E2D;&#x7684;&#x6982;&#x7387;&#x662F;&#x4E0D;&#x662F;&#x5C31;&#x662F;&#x548C;&#x6743;&#x91CD;&#x76F8;&#x5173;&#x8054;&#x4E86;&#xFF1F;</p>
+<p><img src="https://img-blog.csdnimg.cn/b96eae6a2deb45b4bc68cd5810dd3bca.png" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;" style="zoom:50%;"></p>
+<p>&#x90A3;&#x4E48;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x5982;&#x4F55;&#x6A21;&#x62DF;&#x5728;&#x7EBF;&#x6BB5;&#x4E0A;&#x6254;&#x77F3;&#x5B50;&#xFF1F;&#x5F53;&#x7136;&#x662F;&#x4F7F;&#x7528;&#x968F;&#x673A;&#x6570;&#xFF0C;&#x90A3;&#x968F;&#x673A;&#x6570;&#x751F;&#x6210;&#x7684;&#x8303;&#x56F4;&#xFF1F;&#x524D;&#x7F00;&#x548C;&#x6570;&#x7EC4;&#x4E0D;&#x662F;&#x5F88;&#x597D;&#x7528;&#xFF1F;</p>
+<p>&#x6BD4;&#x5982;&#x4E0A;&#x8FF0;&#x524D;&#x7F00;&#x548C;&#x6570;&#x7EC4; <code>preSum</code>&#xFF0C;&#x53D6;&#x503C;&#x8303;&#x56F4;&#x662F; <code>[1, 7]</code>&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5728;&#x8FD9;&#x4E2A;&#x533A;&#x95F4;&#x7684;&#x968F;&#x673A;&#x6570; <code>target = 5</code>&#xFF0C;&#x5C31;&#x597D;&#x50CF;&#x5728;&#x8FD9;&#x6761;&#x7EBF;&#x6BB5;&#x4E2D;&#x968F;&#x673A;&#x6254;&#x4E86;&#x4E00;&#x9897;&#x77F3;&#x5B50;</p>
+<p><img src="https://img-blog.csdnimg.cn/c9137e28704c457a8c001a4e5de3ffd9.png" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;" style="zoom:50%;"></p>
+<p>&#x8FD8;&#x6709;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;<code>preSum</code> &#x4E2D;&#x5E76;&#x6CA1;&#x6709; 5 &#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x9009;&#x62E9;&#x6BD4; 5 &#x5927;&#x7684;&#x6700;&#x5C0F;&#x5143;&#x7D20;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; 6&#xFF0C;&#x5373; <code>preSum</code> &#x6570;&#x7EC4;&#x7684;&#x7D22;&#x5F15; 3</p>
+<p><img src="https://img-blog.csdnimg.cn/2fcd286ae0dd4fe2938ac03c2bfd21ce.png" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;" style="zoom:50%;"></p>
+<p>&#x5982;&#x4F55;&#x5FEB;&#x901F;&#x5BFB;&#x627E;&#x6570;&#x7EC4;&#x4E2D;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#x76EE;&#x6807;&#x503C;&#x7684;&#x6700;&#x5C0F;&#x5143;&#x7D20;&#x5462;&#xFF1F;&#x4E8C;&#x5206;&#x641C;&#x7D22;&#x5DE6;&#x4FA7;&#x8FB9;&#x754C;</p>
+<blockquote>
+<p>[!note|iconVisibility:hidden]</p>
+<p><strong>&#x5F53;&#x76EE;&#x6807;&#x5143;&#x7D20; <code>target</code> &#x4E0D;&#x5B58;&#x5728;&#x6570;&#x7EC4; <code>nums</code> &#x4E2D;&#x65F6;&#xFF0C;&#x641C;&#x7D22;&#x5DE6;&#x4FA7;&#x8FB9;&#x754C;&#x7684;&#x4E8C;&#x5206;&#x641C;&#x7D22;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x53EF;&#x4EE5;&#x505A;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#x89E3;&#x8BFB;&#xFF1A;</strong></p>
+<ol>
+<li><strong>&#x8FD4;&#x56DE;&#x7684;&#x8FD9;&#x4E2A;&#x503C;&#x662F; <code>nums</code> &#x4E2D;&#x5927;&#x4E8E;&#x7B49;&#x4E8E; <code>target</code> &#x7684;&#x6700;&#x5C0F;&#x5143;&#x7D20;&#x7D22;&#x5F15;</strong></li>
+<li><strong>&#x8FD4;&#x56DE;&#x7684;&#x8FD9;&#x4E2A;&#x503C;&#x662F; <code>target</code> &#x5E94;&#x8BE5;&#x63D2;&#x5165;&#x5728; <code>nums</code> &#x4E2D;&#x7684;&#x7D22;&#x5F15;&#x4F4D;&#x7F6E;&#x3001;</strong></li>
+<li><strong>&#x8FD4;&#x56DE;&#x7684;&#x8FD9;&#x4E2A;&#x503C;&#x662F; <code>nums</code> &#x4E2D;&#x5C0F;&#x4E8E; <code>target</code> &#x7684;&#x5143;&#x7D20;&#x4E2A;&#x6570;</strong></li>
+</ol>
+</blockquote>
+<p>&#x6BD4;&#x5982;&#x5728;&#x6709;&#x5E8F;&#x6570;&#x7EC4; <code>nums = [2,3,5,7]</code> &#x4E2D;&#x641C;&#x7D22;<code>target = 4</code>&#xFF0C;&#x641C;&#x7D22;&#x5DE6;&#x8FB9;&#x754C;&#x7684;&#x4E8C;&#x5206;&#x7B97;&#x6CD5;&#x4F1A;&#x8FD4;&#x56DE; 2&#xFF0C;&#x4F60;&#x5E26;&#x5165;&#x4E0A;&#x9762;&#x7684;&#x8BF4;&#x6CD5;&#xFF0C;&#x90FD;&#x662F;&#x5BF9;&#x7684;</p>
+<p>&#x4E8E;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x6211;&#x4EEC;&#x7684;&#x6700;&#x7EC8;&#x4EE3;&#x7801;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> Solution {
+<span class="hljs-keyword">private</span>:
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; preSum;
+<span class="hljs-keyword">public</span>:
+    Solution(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; w) {
+        <span class="hljs-keyword">int</span> n = w.size();
+        preSum.resize(n + <span class="hljs-number">1</span>);
+        preSum[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++){
+            preSum[i] = preSum[i - <span class="hljs-number">1</span>] + w[i - <span class="hljs-number">1</span>];
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">pickIndex</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">int</span> n = preSum.size();
+        <span class="hljs-keyword">int</span> target = <span class="hljs-number">1</span> + rand() % (preSum[n - <span class="hljs-number">1</span>]); <span class="hljs-comment">// rand() % n  [0, n)</span>
+        <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>, right = n;
+        <span class="hljs-keyword">while</span> (left &lt; right) {
+            <span class="hljs-keyword">int</span> mid = left + (right - left) / <span class="hljs-number">2</span>;
+            <span class="hljs-keyword">if</span> (preSum[mid] &lt; target){
+                left = mid + <span class="hljs-number">1</span>;
+            } <span class="hljs-keyword">else</span> {
+                right = mid;
+            }
+        }
+        <span class="hljs-keyword">return</span> left - <span class="hljs-number">1</span>;
+    }
+};
+
+<span class="hljs-comment">/**
+ * Your Solution object will be instantiated and called as such:
+ * Solution* obj = new Solution(w);
+ * int param_1 = obj-&gt;pickIndex();
+ */</span>
+</code></pre>
+<p>&#x5176;&#x4E2D;&#x5173;&#x4E8E;&#x524D;&#x7F00;&#x548C;&#x3001;&#x4E8C;&#x5206;&#x641C;&#x7D22;&#x5DE6;&#x4FA7;&#x8FB9;&#x754C;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; C++ &#x63D0;&#x4F9B;&#x7684;&#x5DF2;&#x6709;&#x51FD;&#x6570;&#x6765;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x7B80;&#x5316;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> Solution {
+<span class="hljs-keyword">private</span>:
+    mt19937 gen;
+    uniform_int_distribution&lt;<span class="hljs-keyword">int</span>&gt; dis;
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; preSum;
+<span class="hljs-keyword">public</span>:
+    Solution(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; w) : gen(random_device{}()), dis(<span class="hljs-number">1</span>, accumulate(w.begin(), w.end(), <span class="hljs-number">0</span>)) {
+        partial_sum(w.begin(), w.end(), back_inserter(preSum));
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">pickIndex</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">int</span> x = dis(gen);
+        <span class="hljs-keyword">return</span> lower_bound(preSum.begin(), preSum.end(), x) - preSum.begin();
+    }
+};
+
+<span class="hljs-comment">/**
+ * Your Solution object will be instantiated and called as such:
+ * Solution* obj = new Solution(w);
+ * int param_1 = obj-&gt;pickIndex();
+ */</span>
+</code></pre>
+<h5 id="&#x3010;&#x7ECF;&#x5178;&#x95EE;&#x9898;&#x3011;o1-&#x65F6;&#x95F4;&#x63D2;&#x5165;&#x3001;&#x5220;&#x9664;&#x548C;&#x83B7;&#x53D6;&#x968F;&#x673A;&#x5143;&#x7D20;">&#x3010;&#x7ECF;&#x5178;&#x95EE;&#x9898;&#x3011;O(1) &#x65F6;&#x95F4;&#x63D2;&#x5165;&#x3001;&#x5220;&#x9664;&#x548C;&#x83B7;&#x53D6;&#x968F;&#x673A;&#x5143;&#x7D20;</h5>
+<p><strong>&#x9898;&#x76EE;&#x63CF;&#x8FF0;</strong></p>
+<p><a href="https://leetcode.cn/problems/insert-delete-getrandom-o1/" target="_blank">380. O(1) &#x65F6;&#x95F4;&#x63D2;&#x5165;&#x3001;&#x5220;&#x9664;&#x548C;&#x83B7;&#x53D6;&#x968F;&#x673A;&#x5143;&#x7D20;</a></p>
+<p><strong>&#x89E3;&#x6CD5;</strong></p>
+<p>&#x8FD9;&#x9053;&#x9898;&#x548C;&#x968F;&#x673A;&#x6709;&#x4E00;&#x70B9;&#x70B9;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x4F46;&#x662F;&#x4E3B;&#x8981;&#x8003;&#x5BDF;&#x4E0D;&#x662F;&#x5728;&#x968F;&#x673A;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x800C;&#x662F;&#x5982;&#x4F55;&#x7EC4;&#x7EC7;&#x6570;&#x636E;&#x5B9E;&#x73B0; <script type="math/tex; ">\mathcal O(1)</script> &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x7684;&#x968F;&#x673A;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x5143;&#x7D20;</p>
+<p>&#x60F3;&#x8981;&#x4EE5;&#x5E38;&#x6570;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5FC5;&#x7136;&#x662F;&#x901A;&#x8FC7;&#x7D22;&#x5F15;&#x968F;&#x673A;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x5143;&#x7D20;</p>
+<p>&#x54C8;&#x5E0C;&#x8868;&#x53EF;&#x4EE5;&#x505A;&#x5E95;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5417;&#xFF1F;&#x4E0D;&#x884C;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x54C8;&#x5E0C;&#x51B2;&#x7A81;&#x7684;&#x8BDD;&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x5143;&#x7D20;&#x88AB;&#x54C8;&#x5E0C;&#x51FD;&#x6570;&#x5206;&#x6563;&#x5230;&#x6574;&#x4E2A;&#x6570;&#x7EC4;&#x91CC;&#x9762;&#x7684;&#xFF0C;&#x8FD8;&#x662F;&#x62C9;&#x94FE;&#x6CD5;&#x7B49;&#x7B49;&#x89E3;&#x51B3;&#x54C8;&#x5E0C;&#x51B2;&#x7A81;&#x7684;&#x673A;&#x5236;&#xFF0C;&#x57FA;&#x672C;&#x505A;&#x4E0D;&#x5230; <script type="math/tex; ">\mathcal O(1)</script> &#x65F6;&#x95F4;&#x7B49;&#x6982;&#x7387;&#x968F;&#x673A;&#x83B7;&#x53D6;&#x5143;&#x7D20;</p>
+<p>&#x90A3;&#x597D;&#x4E86;&#xFF0C;&#x53EA;&#x5269;&#x4E0B;&#x4E00;&#x7EC4;&#x7ED3;&#x6784;&#x4E86;&#xFF0C;&#x6570;&#x7EC4;&#x3002;&#x90A3;&#x4E48;&#x786E;&#x5B9A;&#x9876;&#x5C42;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x662F;&#x6570;&#x7EC4;&#x7684;&#x8BDD;&#xFF0C;&#x600E;&#x4E48;&#x505A;&#x5230;&#x5E38;&#x6570;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x7684;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x5462;&#xFF1F;</p>
+<p>&#x8FD8;&#x662F;&#x54C8;&#x5E0C;&#xFF0C;<strong>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x5728; <script type="math/tex; ">\mathcal O(1)</script> &#x7684;&#x65F6;&#x95F4;&#x5220;&#x9664;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x67D0;&#x4E00;&#x4E2A;&#x5143;&#x7D20; <code>val</code>&#xFF0C;&#x53EF;&#x4EE5;&#x5148;&#x628A;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#x4EA4;&#x6362;&#x5230;&#x6570;&#x7EC4;&#x7684;&#x5C3E;&#x90E8;&#xFF0C;&#x7136;&#x540E;&#x518D; <code>pop</code> &#x6389;</strong>&#xFF0C;&#x4EA4;&#x6362;&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#x5FC5;&#x987B;&#x901A;&#x8FC7;&#x7D22;&#x5F15;&#x8FDB;&#x884C;&#x4EA4;&#x6362;&#x5BF9;&#x5427;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x54C8;&#x5E0C;&#x8868; <code>valToIndex</code> &#x6765;&#x8BB0;&#x5F55;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x503C;&#x5BF9;&#x5E94;&#x7684;&#x7D22;&#x5F15;</p>
+<p>&#x8BE6;&#x7EC6;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> RandomizedSet {
+<span class="hljs-keyword">private</span>:
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; nums;
+    <span class="hljs-built_in">unordered_map</span>&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt; valToIndex;
+<span class="hljs-keyword">public</span>:
+    RandomizedSet() {
+        srand((<span class="hljs-keyword">unsigned</span>)time(<span class="hljs-literal">NULL</span>));
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">insert</span><span class="hljs-params">(<span class="hljs-keyword">int</span> val)</span> </span>{
+        <span class="hljs-keyword">if</span> (valToIndex.count(val)) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        valToIndex[val] = nums.size();
+        nums.push_back(val);
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">remove</span><span class="hljs-params">(<span class="hljs-keyword">int</span> val)</span> </span>{
+        <span class="hljs-keyword">if</span> (!valToIndex.count(val)) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        <span class="hljs-keyword">int</span> index = valToIndex[val];
+        valToIndex[nums.back()] = index;
+        swap(nums[index], nums.back());
+        nums.pop_back();
+        valToIndex.erase(val);
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getRandom</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> nums[rand() % nums.size()];
+    }
+};
+
+<span class="hljs-comment">/**
+ * Your RandomizedSet object will be instantiated and called as such:
+ * RandomizedSet* obj = new RandomizedSet();
+ * bool param_1 = obj-&gt;insert(val);
+ * bool param_2 = obj-&gt;remove(val);
+ * int param_3 = obj-&gt;getRandom();
+ */</span>
+</code></pre>
+<h5 id="&#x3010;&#x7ECF;&#x5178;&#x95EE;&#x9898;&#x3011;&#x9ED1;&#x540D;&#x5355;&#x4E2D;&#x7684;&#x968F;&#x673A;&#x6570;">&#x3010;&#x7ECF;&#x5178;&#x95EE;&#x9898;&#x3011;&#x9ED1;&#x540D;&#x5355;&#x4E2D;&#x7684;&#x968F;&#x673A;&#x6570;</h5>
+<p><strong>&#x9898;&#x76EE;&#x63CF;&#x8FF0;</strong></p>
+<p><a href="https://leetcode.cn/problems/random-pick-with-blacklist/" target="_blank">710. &#x9ED1;&#x540D;&#x5355;&#x4E2D;&#x7684;&#x968F;&#x673A;&#x6570;</a></p>
+<p><strong>&#x89E3;&#x6CD5;</strong></p>
+<p>&#x5148;&#x89E3;&#x91CA;&#x9898;&#x76EE;&#x7684;&#x4E00;&#x4E2A;&#x8981;&#x6C42;&#x2014;&#x2014;&#x5728; <code>pick</code> &#x51FD;&#x6570;&#x4E2D;&#x5E94;&#x8BE5;&#x5C3D;&#x53EF;&#x80FD;&#x5C11;&#x8C03;&#x7528;&#x968F;&#x673A;&#x6570;&#x751F;&#x6210;&#x51FD;&#x6570; <code>rand()</code></p>
+<p>&#x8FD9;&#x53E5;&#x8BDD;&#x4EC0;&#x4E48;&#x610F;&#x601D;&#x5462;&#xFF0C;&#x6BD4;&#x5982;&#x8BF4;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x60F3;&#x51FA;&#x5982;&#x4E0B;&#x62CD;&#x8111;&#x888B;&#x7684;&#x89E3;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">pick</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">int</span> res = rand() % N;
+    <span class="hljs-keyword">while</span> (res exists in blacklist) {
+        <span class="hljs-comment">// &#x91CD;&#x65B0;&#x968F;&#x673A;&#x4E00;&#x4E2A;&#x7ED3;&#x679C;</span>
+        res = rand() % N;
+    }
+    <span class="hljs-keyword">return</span> res;
+}
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x4F1A;&#x591A;&#x6B21;&#x8C03;&#x7528; <code>rand()</code> &#x51FD;&#x6570;&#xFF0C;&#x6267;&#x884C;&#x6548;&#x7387;&#x7ADF;&#x7136;&#x548C;&#x968F;&#x673A;&#x6570;&#x76F8;&#x5173;&#xFF0C;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x6F02;&#x4EAE;&#x7684;&#x89E3;&#x6CD5;</p>
+<p>&#x806A;&#x660E;&#x7684;&#x89E3;&#x6CD5;&#x7C7B;&#x4F3C;&#x4E0A;&#x4E00;&#x9053;&#x9898;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x533A;&#x95F4; <code>[0,N)</code> &#x770B;&#x505A;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x7136;&#x540E;&#x5C06; <code>blacklist</code> &#x4E2D;&#x7684;&#x5143;&#x7D20;&#x79FB;&#x5230;&#x6570;&#x7EC4;&#x7684;&#x6700;&#x672B;&#x5C3E;&#xFF0C;&#x540C;&#x65F6;&#x7528;&#x4E00;&#x4E2A;&#x54C8;&#x5E0C;&#x8868;&#x8FDB;&#x884C;&#x6620;&#x5C04;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> Solution {
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-keyword">int</span> sz;
+    <span class="hljs-built_in">unordered_map</span>&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt; mapping;
+
+    Solution(<span class="hljs-keyword">int</span> N, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; blacklist) {
+        <span class="hljs-comment">// &#x6700;&#x7EC8;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x4E2A;&#x6570;</span>
+        sz = N - blacklist.size();
+        <span class="hljs-comment">// &#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x7D22;&#x5F15;</span>
+        <span class="hljs-keyword">int</span> last = N - <span class="hljs-number">1</span>;
+        <span class="hljs-comment">// &#x5C06;&#x9ED1;&#x540D;&#x5355;&#x4E2D;&#x7684;&#x7D22;&#x5F15;&#x6362;&#x5230;&#x6700;&#x540E;&#x53BB;</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> b : blacklist) {
+            mapping[b] = last;
+            last--;
+        }
+    }
+};
+</code></pre>
+<p>&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#x6240;&#x793A;</p>
+<p><img src="https://img-blog.csdnimg.cn/168f613d5caf4924bb78c55251a5c3d8.png" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;" style="zoom:50%;"></p>
+<p>&#x8FD9;&#x65F6;&#x5019; <code>pick</code> &#x51FD;&#x6570;&#x5C31;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E3A;</p>
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">pick</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">// &#x968F;&#x673A;&#x9009;&#x53D6;&#x4E00;&#x4E2A;&#x7D22;&#x5F15;</span>
+    <span class="hljs-keyword">int</span> index = rand() % sz;
+    <span class="hljs-comment">// &#x8FD9;&#x4E2A;&#x7D22;&#x5F15;&#x547D;&#x4E2D;&#x4E86;&#x9ED1;&#x540D;&#x5355;&#xFF0C;</span>
+    <span class="hljs-comment">// &#x9700;&#x8981;&#x88AB;&#x6620;&#x5C04;&#x5230;&#x5176;&#x4ED6;&#x4F4D;&#x7F6E;</span>
+    <span class="hljs-keyword">if</span> (mapping.count(index)) {
+        <span class="hljs-keyword">return</span> mapping[index];
+    }
+    <span class="hljs-comment">// &#x82E5;&#x6CA1;&#x547D;&#x4E2D;&#x9ED1;&#x540D;&#x5355;&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;</span>
+    <span class="hljs-keyword">return</span> index;
+}
+</code></pre>
+<p>&#x8FD9;&#x65F6;&#x5019;&#x4EE3;&#x7801;&#x770B;&#x8D77;&#x6765;&#x5F88;&#x5B8C;&#x6574;&#x4E86;&#xFF0C;&#x53EF;&#x4EE5;&#x653E;&#x5230; LeetCode &#x91CC;&#x9762;&#x53BB;&#x6D4B;&#x4E0B;&#x95EE;&#x9898;</p>
+<p>&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x8FD8;&#x6CA1;&#x6709;&#x8BA8;&#x8BBA;&#x9ED1;&#x540D;&#x5355;&#x5143;&#x7D20;&#x5C31;&#x5728; <code>[sz, N)</code> &#x7684;&#x60C5;&#x51B5;&#x3002;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x54EA;&#x4E9B;&#x95EE;&#x9898;&#x5462;&#xFF1F;&#x5982;&#x4E0B;&#xFF0C;&#x6211;&#x5DF2;&#x7ECF;&#x7ED9;&#x5462;&#x6D4B;&#x5B8C;&#x4E86;</p>
+<p><strong>&#x7B2C;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#x2014;&#x2014;&#x5728;&#x5BF9; <code>mapping[b]</code> &#x8D4B;&#x503C;&#x65F6;&#xFF0C;&#x8981;&#x4FDD;&#x8BC1; <code>last</code> &#x4E00;&#x5B9A;&#x4E0D;&#x5728; <code>blacklist</code> &#x4E2D;</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/14f8994422344e75bb4119fdb3b19cef.png" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;" style="zoom:50%;"></p>
+<p>&#x4FEE;&#x6539;&#x5982;&#x4E0B;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// &#x6784;&#x9020;&#x51FD;&#x6570;</span>
+Solution(<span class="hljs-keyword">int</span> N, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; blacklist) {
+    sz = N - blacklist.size();
+    <span class="hljs-comment">// &#x5148;&#x5C06;&#x6240;&#x6709;&#x9ED1;&#x540D;&#x5355;&#x6570;&#x5B57;&#x52A0;&#x5165; map</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> b : blacklist) { 
+        <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x8D4B;&#x503C;&#x591A;&#x5C11;&#x90FD;&#x53EF;&#x4EE5;</span>
+        <span class="hljs-comment">// &#x76EE;&#x7684;&#x4EC5;&#x4EC5;&#x662F;&#x628A;&#x952E;&#x5B58;&#x8FDB;&#x54C8;&#x5E0C;&#x8868;</span>
+        <span class="hljs-comment">// &#x65B9;&#x4FBF;&#x5FEB;&#x901F;&#x5224;&#x65AD;&#x6570;&#x5B57;&#x662F;&#x5426;&#x5728;&#x9ED1;&#x540D;&#x5355;&#x5185;</span>
+        mapping[b] = <span class="hljs-number">666</span>;
+    }
+
+    <span class="hljs-keyword">int</span> last = N - <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> b : blacklist) {
+        <span class="hljs-comment">// &#x8DF3;&#x8FC7;&#x6240;&#x6709;&#x9ED1;&#x540D;&#x5355;&#x4E2D;&#x7684;&#x6570;&#x5B57;</span>
+        <span class="hljs-keyword">while</span> (mapping.count(last)) {
+            last--;
+        }
+        <span class="hljs-comment">// &#x5C06;&#x9ED1;&#x540D;&#x5355;&#x4E2D;&#x7684;&#x7D22;&#x5F15;&#x6620;&#x5C04;&#x5230;&#x5408;&#x6CD5;&#x6570;&#x5B57;</span>
+        mapping[b] = last;
+        last--;
+    }
+</code></pre>
+<p><strong>&#x7B2C;&#x4E8C;&#x79CD;&#x60C5;&#x51B5;&#x2014;&#x2014;&#x5982;&#x679C; <code>blacklist</code> &#x4E2D;&#x7684;&#x9ED1;&#x540D;&#x5355;&#x6570;&#x5B57;&#x672C;&#x8EAB;&#x5C31;&#x5B58;&#x5728;&#x533A;&#x95F4; <code>[sz, N)</code> &#x4E2D;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x6CA1;&#x5FC5;&#x8981;&#x5728; <code>mapping</code> &#x4E2D;&#x5EFA;&#x7ACB;&#x6620;&#x5C04;</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/17367242551248f3b79adef507b618bf.png" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;" style="zoom:50%;"></p>
+<p>&#x4FEE;&#x6539;&#x5982;&#x4E0B;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> Solution {
+<span class="hljs-keyword">private</span>:
+    <span class="hljs-keyword">int</span> sz;
+    <span class="hljs-built_in">unordered_map</span>&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt; mapping;
+<span class="hljs-keyword">public</span>:
+    Solution(<span class="hljs-keyword">int</span> n, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; blacklist) {
+        sz = n - blacklist.size();
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> b: blacklist)
+            mapping[b] = <span class="hljs-number">-1</span>;
+
+        <span class="hljs-keyword">int</span> last = n - <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> b: blacklist){
+            <span class="hljs-keyword">if</span> (b &gt;= sz) <span class="hljs-keyword">continue</span>;
+            <span class="hljs-keyword">while</span> (mapping.count(last))
+                last--;
+            mapping[b] = last;
+            last--;
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">pick</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">int</span> index = rand() % sz;
+        <span class="hljs-keyword">if</span> (mapping.count(index))
+            <span class="hljs-keyword">return</span> mapping[index];
+        <span class="hljs-keyword">return</span> index;
+    }
+};
+
+<span class="hljs-comment">/**
+ * Your Solution object will be instantiated and called as such:
+ * Solution* obj = new Solution(n, blacklist);
+ * int param_1 = obj-&gt;pick();
+ */</span>
+</code></pre>
+<h2 id="&#x6C34;&#x5858;&#x62BD;&#x6837;&#x7B97;&#x6CD5;">&#x6C34;&#x5858;&#x62BD;&#x6837;&#x7B97;&#x6CD5;</h2>
+<h5 id="&#x3010;&#x7ECF;&#x5178;&#x95EE;&#x9898;&#x3011;&#x94FE;&#x8868;&#x968F;&#x673A;&#x8282;&#x70B9;">&#x3010;&#x7ECF;&#x5178;&#x95EE;&#x9898;&#x3011;&#x94FE;&#x8868;&#x968F;&#x673A;&#x8282;&#x70B9;</h5>
+<p><strong>&#x9898;&#x76EE;&#x63CF;&#x8FF0;</strong></p>
+<p><a href="https://leetcode.cn/problems/linked-list-random-node/" target="_blank">382. &#x94FE;&#x8868;&#x968F;&#x673A;&#x8282;&#x70B9;</a></p>
+<p><strong>&#x89E3;&#x6CD5;</strong></p>
+<p>&#x4E00;&#x79CD;&#x6BD4;&#x8F83;&#x76F4;&#x63A5;&#x7684;&#x505A;&#x6CD5;&#x5C31;&#x662F;&#x904D;&#x5386;&#x4E00;&#x904D;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x7528;&#x6570;&#x7EC4;&#x5B58;&#x4E0B;&#x6765;&#xFF0C;&#x90A3;&#x4E48;&#x968F;&#x673A;&#x4ECE;&#x6570;&#x7EC4;&#x4E2D;&#x53D6;&#x503C;</p>
+<p>&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x6CD5;&#x662F;&#x6C34;&#x5858;&#x62BD;&#x6837;&#xFF0C;&#x7B97;&#x6CD5;&#x7684;&#x6D41;&#x7A0B;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5C31;&#x662F;&#x4ECE;&#x94FE;&#x8868;&#x5934;&#x5F00;&#x59CB;&#xFF0C;&#x904D;&#x5386;&#x6574;&#x4E2A;&#x94FE;&#x8868;&#xFF0C;&#x5BF9;&#x904D;&#x5386;&#x5230;&#x7684;&#x7B2C; <script type="math/tex; ">i</script> &#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x968F;&#x673A;&#x9009;&#x62E9;&#x533A;&#x95F4; <script type="math/tex; ">[0,i)</script> &#x5185;&#x7684;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x5176;&#x7B49;&#x4E8E; <script type="math/tex; ">0</script>&#xFF0C;&#x5219;&#x5C06;&#x7B54;&#x6848;&#x7F6E;&#x4E3A;&#x8BE5;&#x8282;&#x70B9;&#x503C;&#xFF0C;&#x5426;&#x5219;&#x7B54;&#x6848;&#x4E0D;&#x53D8;&#x3002;</p>
+<p>&#x8BE5;&#x7B97;&#x6CD5;&#x4F1A;&#x4FDD;&#x8BC1;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x503C;&#x6210;&#x4E3A;&#x6700;&#x540E;&#x88AB;&#x8FD4;&#x56DE;&#x7684;&#x503C;&#x7684;&#x6982;&#x7387;&#x5747;&#x4E3A; <script type="math/tex; ">\dfrac{1}{n}</script>&#xFF0C;&#x8BC1;&#x660E;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="https://img-blog.csdnimg.cn/f147a80502274a05ad6871f1188fd9da.png" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></p>
+<pre><code class="lang-cpp"><span class="hljs-comment">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */</span>
+<span class="hljs-keyword">class</span> Solution {
+<span class="hljs-keyword">private</span>:
+    ListNode* head;
+<span class="hljs-keyword">public</span>:
+    Solution(ListNode* head) {
+        <span class="hljs-keyword">this</span>-&gt;head = head;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getRandom</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>, ans = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> node = head; node; node = node-&gt;next)
+        {
+            <span class="hljs-keyword">if</span> (rand() % i == <span class="hljs-number">0</span>) ans = node-&gt;val;
+            i++;
+        }
+        <span class="hljs-keyword">return</span> ans;
+    }
+};
+
+<span class="hljs-comment">/**
+ * Your Solution object will be instantiated and called as such:
+ * Solution* obj = new Solution(head);
+ * int param_1 = obj-&gt;getRandom();
+ */</span>
+</code></pre>
+<h5 id="&#x3010;&#x7ECF;&#x5178;&#x95EE;&#x9898;&#x3011;&#x968F;&#x673A;&#x6570;&#x7D22;&#x5F15;">&#x3010;&#x7ECF;&#x5178;&#x95EE;&#x9898;&#x3011;&#x968F;&#x673A;&#x6570;&#x7D22;&#x5F15;</h5>
+<p><strong>&#x9898;&#x76EE;&#x63CF;&#x8FF0;</strong></p>
+<p><a href="https://leetcode.cn/problems/random-pick-index/" target="_blank">398. &#x968F;&#x673A;&#x6570;&#x7D22;&#x5F15;</a></p>
+<p><strong>&#x89E3;&#x6CD5;</strong></p>
+<p>&#x6709;&#x4E86;&#x4E0A;&#x9762;&#x4E00;&#x9053;&#x9898;&#x7684;&#x7406;&#x8BBA;&#x94FA;&#x57AB;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x8BB2;&#x8BB2;&#x4E3A;&#x4EC0;&#x4E48;&#x53EB;&#x6C34;&#x5858;&#x62BD;&#x6837;&#x4E86;&#xFF1F;</p>
+<p>&#x82E5;&#x8FD9;&#x91CC;&#x7684;&#x6570;&#x7EC4;&#x5E76;&#x4E0D;&#x662F;&#x5728;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x5B8C;&#x5168;&#x7ED9;&#x51FA;&#xFF0C;&#x800C;&#x662F;&#x4EE5;&#x6587;&#x4EF6;&#x5F62;&#x5F0F;&#x50A8;&#x5B58;&#xFF0C;&#x4E14;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x8FDC;&#x8D85;&#x5185;&#x5B58;&#x3002;&#x90A3;&#x4E48;&#xFF0C;&#x5728;&#x8BA1;&#x7B97;&#x673A;&#x8BFB;&#x5165;&#x65F6;&#x5C31;&#x662F;&#x6301;&#x7EED;&#x4EE5;&#x300E;&#x6D41;&#x300F;&#x7684;&#x5F62;&#x5F0F;&#x8BFB;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x6D41;&#x5F88;&#x957F;&#xFF0C;&#x4E0D;&#x53EF;&#x80FD;&#x5C06;&#x6240;&#x6709;&#x4E0B;&#x6807;&#x4FDD;&#x5B58;&#x5230;&#x5185;&#x5B58;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x300E;&#x84C4;&#x6C34;&#x6C60;&#x62BD;&#x6837;&#x300F;&#x7684;&#x65B9;&#x5F0F;&#x6C42;&#x89E3;</p>
+<p>&#x6C34;&#x5858;&#x62BD;&#x6837;&#x7684;&#x7406;&#x8BBA;&#x5C31;&#x662F;&#x4E0A;&#x9762;&#x7684;&#x90A3;&#x6837;&#xFF0C;&#x5728;&#x8FD9;&#x9053;&#x9898;&#x4E2D;&#x904D;&#x5386; <script type="math/tex; ">\textit{nums}</script>&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x7B2C; <script type="math/tex; ">i</script> &#x6B21;&#x9047;&#x5230;&#x503C;&#x4E3A; <script type="math/tex; ">\textit{target}</script> &#x7684;&#x5143;&#x7D20;&#x65F6;&#xFF0C;&#x968F;&#x673A;&#x9009;&#x62E9;&#x533A;&#x95F4; <script type="math/tex; ">[0,i)</script> &#x5185;&#x7684;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x5176;&#x7B49;&#x4E8E; <script type="math/tex; ">0</script>&#xFF0C;&#x5219;&#x5C06;&#x8FD4;&#x56DE;&#x503C;&#x7F6E;&#x4E3A;&#x8BE5;&#x5143;&#x7D20;&#x7684;&#x4E0B;&#x6807;&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;&#x503C;&#x4E0D;&#x53D8;</p>
+<p>&#x8BBE; <script type="math/tex; ">\textit{nums}</script>&#x4E2D;&#x6709; <script type="math/tex; ">k</script> &#x4E2A;&#x503C;&#x4E3A; <script type="math/tex; ">\textit{target}</script> &#x7684;&#x5143;&#x7D20;&#xFF0C;&#x6C34;&#x5858;&#x62BD;&#x6837;&#x7B97;&#x6CD5;&#x80FD;&#x4FDD;&#x8BC1;&#x8FD9; <script type="math/tex; ">k</script> &#x4E2A;&#x5143;&#x7D20;&#x7684;&#x4E0B;&#x6807;&#x6210;&#x4E3A;&#x6700;&#x7EC8;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x6982;&#x7387;&#x5747;&#x4E3A; <script type="math/tex; ">\dfrac{1}{k} </script></p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> Solution {
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &amp;nums;
+<span class="hljs-keyword">public</span>:
+    Solution(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &amp;nums) : nums(nums) {}
+
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">pick</span><span class="hljs-params">(<span class="hljs-keyword">int</span> target)</span> </span>{
+        <span class="hljs-keyword">int</span> ans;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>, cnt = <span class="hljs-number">0</span>; i &lt; nums.size(); ++i) {
+            <span class="hljs-keyword">if</span> (nums[i] == target) {
+                ++cnt; <span class="hljs-comment">// &#x7B2C; cnt &#x6B21;&#x9047;&#x5230; target</span>
+                <span class="hljs-keyword">if</span> (rand() % cnt == <span class="hljs-number">0</span>) {
+                    ans = i;
+                }
+            }
+        }
+        <span class="hljs-keyword">return</span> ans;
+    }
+};
+</code></pre>
+<p>&#x4F46;&#x662F;&#x6709;&#x4E2A; bug&#xFF0C;&#x6C34;&#x5858;&#x62BD;&#x6837;&#x7684; C++ &#x4EE3;&#x7801;&#x5728; LeetCode &#x4E0A;&#x4F1A;&#x8D85;&#x65F6;&#x95F4;&#x9650;&#x5236;&#xFF0C;&#x6240;&#x4EE5;&#x7B80;&#x5355;&#x65B9;&#x4FBF;&#x90A3;&#x5C31;&#x8FD8;&#x662F;&#x7528;&#x54C8;&#x5E0C;&#x8868;&#x5427;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="6排序.html" class="navigation navigation-prev " aria-label="Previous page: 6 排序">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="8优先队列.html" class="navigation navigation-next " aria-label="Next page: 8 随机选择">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"7 随机选择","level":"2.1.7","depth":2,"next":{"title":"8 随机选择","level":"2.1.8","depth":2,"path":"Part One-常用方法/8优先队列.md","ref":"Part One-常用方法/8优先队列.md","articles":[]},"previous":{"title":"6 排序","level":"2.1.6","depth":2,"path":"Part One-常用方法/6排序.md","ref":"Part One-常用方法/6排序.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","expandable-chapters","copy-code-button","flexible-alerts","mathjax-pro","-lunr","-search","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"isCollapsed":true,"isScrollspyActive":true,"label":"目录","maxDepth":6,"mode":"nested","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","visible":true},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax-pro":{"forceSVG":false,"version":"2.7.7"},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"CORE CONTENT"},"note":{"className":"info","icon":"fa fa-info-circle","label":"NOTE"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"TIPS"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"SUPPLEMENT"}},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"langaue":"zh-hans","theme":"default","author":"aries-yhf","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"算法笔记","gitbook":"*","description":"算法"},"file":{"path":"Part One-常用方法/7随机选择.md","mtime":"2022-09-23T14:28:38.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-03-18T05:34:47.110Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax-pro/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
